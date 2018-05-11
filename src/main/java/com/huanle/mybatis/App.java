@@ -41,10 +41,10 @@ public class App {
             // 用户数据列表
             getUserList();
             // 插入数据
-             testInsert();
+            //testInsert();
 
             // 更新用户
-            testUpdate();
+            //testUpdate();
 
             // 删除数据
             //testDelete();
@@ -54,7 +54,8 @@ public class App {
         }
     }
 
-    //
+    //需要注意的是在增加，更改，删除的时候需要调用 session.commit() 来提交事务，
+   //这样才会真正对数据库进行操作提交保存，否则操作没有提交到数据中。
     public static void testInsert()
     {
         try
