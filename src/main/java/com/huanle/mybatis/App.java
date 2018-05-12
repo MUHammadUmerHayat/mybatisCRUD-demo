@@ -24,9 +24,6 @@ public class App {
         }
     }
 
-    public static SqlSessionFactory getSession() {
-        return sqlSessionFactory;
-    }
 
     /**
      * @param args
@@ -35,6 +32,7 @@ public class App {
         // TODO Auto-generated method stub
         SqlSession session = sqlSessionFactory.openSession();
         try {
+        	//下面注释部分用的是xml这种方式是用 SqlSession 实例来直接执行已映射的SQL语句，这次我们使用interface的方法获取mapper
             //sqlSessionFactory.getConfiguration().addMapper(IUser.class);
             //User user = (User) session.selectOne( "com.yiibai.mybatis.models.UserMapper.getUserByID", 1);
 
