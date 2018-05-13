@@ -19,6 +19,6 @@
     </environments>
 
     <mappers> 
-         <mapper resource="com/huanle/mybatis/models/User.xml" />
+         <mapper resource="com/huanle/mybatis/mapper/User.xml" />
     </mappers>
 </configuration>

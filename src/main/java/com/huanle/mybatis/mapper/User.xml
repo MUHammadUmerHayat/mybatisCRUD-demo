@@ -11,10 +11,13 @@
         WHERE id = #{userId}
     </select>
 
-
+	<!--执行增加操作的SQL语句。id和parameterType  
+       分别与IUser接口中的insertUser方法的名字和  
+       参数类型一致。以#{name}的形式引用User参数  
+       的name属性，MyBatis将使用反射读取User参数  
+       的此属性。#{name}中name大小写敏感。--> 
     <insert id="insertUser" parameterType="User">
-        INSERT INTO USER(name,
-        dept, website,phone)
+        INSERT INTO USER(name,dept, website,phone)
         VALUES(#{name}, #{dept}, #{website}, #{phone})
     </insert>
 
