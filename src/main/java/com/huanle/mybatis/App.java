@@ -29,7 +29,7 @@ public class App {
      * @param args
      */
     public static void main(String[] args) {
-        // TODO Auto-generated method stub
+        
         SqlSession session = sqlSessionFactory.openSession();
         try {
         	//下面注释部分用的是xml这种方式是用 SqlSession 实例来直接执行已映射的SQL语句，这次我们使用interface的方法获取mapper
@@ -54,10 +54,8 @@ public class App {
 
     //需要注意的是在增加，更改，删除的时候需要调用 session.commit() 来提交事务，
    //这样才会真正对数据库进行操作提交保存，否则操作没有提交到数据中。
-    public static void testInsert()
-    {
-        try
-        {
+    public static void testInsert(){
+        try{
             // 获取Session连接
             SqlSession session = sqlSessionFactory.openSession();
             // 获取Mapper
@@ -79,8 +77,7 @@ public class App {
             getUserList();
             System.out.println("Test insert finished...");
         }
-        catch (Exception e)
-        {
+        catch (Exception e){
             e.printStackTrace();
         }
     }
@@ -99,10 +96,8 @@ public class App {
         }
     }
 
-    public static void testUpdate()
-    {
-        try
-        {
+    public static void testUpdate(){
+        try{
             SqlSession session = sqlSessionFactory.openSession();
             IUser iuser = session.getMapper(IUser.class);
             System.out.println("Test update start...");
@@ -117,17 +112,14 @@ public class App {
             System.out.println("After update");
             printUsers(iuser.getUserList());
             System.out.println("Test update finished...");
-        }catch (Exception e)
-        {
+        } catch (Exception e){
             e.printStackTrace();
         }
     }
 
     // 删除用户信息
-    public static void testDelete()
-    {
-        try
-        {
+    public static void testDelete(){
+        try{
             SqlSession session = sqlSessionFactory.openSession();
             IUser iuser = session.getMapper(IUser.class);
             System.out.println("Test delete start...");
@@ -142,8 +134,7 @@ public class App {
             System.out.println("After delete");
             printUsers(iuser.getUserList());
             System.out.println("Test delete finished...");
-        }catch (Exception e)
-        {
+        }catch (Exception e){
             e.printStackTrace();
         }
     }
